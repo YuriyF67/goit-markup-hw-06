@@ -789,17 +789,26 @@ color: var(--cornflower-text-color);
     transition: border var(--transition);
 }
 
+.input-icon {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.input-icon {
+    fill: var(--dark-bg-color);
+}
+
 .form-input:focus,
 .form-message:focus {
     outline: none;
     border: 1px solid var(--accent-color);
 }
 
-.form-input-icon {
-    position: absolute;
-    top: 50%;
-    left: 16px;
-    transform: translateY(-50%);
+.form-input:focus + .input-icon {
+    fill: var(--accent-color);
 }
 
 .form-message {
@@ -821,15 +830,6 @@ color: var(--cornflower-text-color);
     line-height: 1.33;
     letter-spacing: 0.04em;
     color: var(--icon-color);
-}
-
-.input-icon {
-    fill: var(--dark-bg-color);
-}
-
-.input-wrapper:focus .input-icon,
-.input-wrapper:hover .input-icon {
-    fill: var(--accent-color);
 }
 
 .form-check-desc {
@@ -926,7 +926,7 @@ color: var(--cornflower-text-color);
 }
 
 .email-input {
-    width: 268px;
+    width: 244px;
     height: 40px;
     padding-left: 18px;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -942,6 +942,10 @@ color: var(--cornflower-text-color);
 }
 
 .subscribe-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
     min-width: 165px;
     height: 40px;
     padding-top: 8px;
